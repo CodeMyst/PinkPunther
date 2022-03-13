@@ -26,11 +26,11 @@ public class PunSubmission
     /// When the pun submission has been made.
     /// </summary>
     public DateTime SubmittedAt { get; set; }
-    
+
     /// <summary>
     /// Pun question.
     /// </summary>
-    public string Question { get; set; }
+    public string Question { get; set; } = null!;
     
     /// <summary>
     /// Pun answer. If the type is <see cref="PunType.Statement"/> then this is null.
