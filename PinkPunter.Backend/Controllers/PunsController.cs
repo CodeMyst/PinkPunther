@@ -10,9 +10,27 @@ namespace PinkPunter.Backend.Controllers;
 public class PunsController : ControllerBase
 {
     private readonly PunsService _punsService;
+    private readonly PunSubmissionsService _punSubmissionsService;
 
-    public PunsController(PunsService punsService) => _punsService = punsService;
+    public PunsController(PunsService punsService, PunSubmissionsService punSubmissionsService)
+    {
+        _punsService = punsService;
+        _punSubmissionsService = punSubmissionsService;
+    }
 
-    [HttpGet]
-    public async Task<List<Pun>> Get() => await _punsService.GetAsync();
+    [HttpPost("Submit")]
+    public async Task<PunSubmission> Submit([FromBody] PunSubmissionCreateInfo createInfo)
+    {
+        var submission = new PunSubmission
+        {
+            SubmittedAt = DateTime.Now,
+            Type = createInfo.Type,
+            Question = createInfo.Question,
+            Answer = createInfo.Type == PunType.QuestionAnswer ? createInfo.Answer : null
+        };
+
+        await _punSubmissionsService.CreateSubmissionAsync(submission);
+
+        return submission;
+    }
 }
