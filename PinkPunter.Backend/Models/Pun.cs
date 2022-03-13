@@ -28,12 +28,12 @@ public class Pun
     /// <summary>
     /// List of all ratings the pun has gotten.
     /// </summary>
-    public List<Rating> Ratings { get; set; }
-    
+    public List<Rating>? Ratings { get; set; }
+
     /// <summary>
     /// Pun question.
     /// </summary>
-    public string Question { get; set; }
+    public string Question { get; set; } = null!;
     
     /// <summary>
     /// Pun answer. If the type is <see cref="PunType.Statement"/> then this is null.

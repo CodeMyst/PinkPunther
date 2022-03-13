@@ -5,7 +5,8 @@ using PinkPunter.Backend.Services;
 namespace PinkPunter.Backend.Controllers;
 
 [ApiController]
-[Route("/api/[controller]")]
+[Route("/api/v{version:apiVersion}/[controller]")]
+[ApiVersion("1.0")]
 public class PunsController : ControllerBase
 {
     private readonly PunsService _punsService;
