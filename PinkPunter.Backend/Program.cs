@@ -9,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<PinkPunterDatabaseSettings>(
     builder.Configuration.GetSection("PinkPunterDatabase"));
 
+builder.Services.AddSingleton<MongoDbService>();
 builder.Services.AddSingleton<PunsService>();
+builder.Services.AddSingleton<PunSubmissionsService>();
 
 builder.Services.AddApiVersioning(o =>
 {

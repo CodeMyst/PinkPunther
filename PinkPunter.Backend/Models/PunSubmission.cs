@@ -30,10 +30,15 @@ public class PunSubmission
     /// <summary>
     /// Pun question.
     /// </summary>
-    public string Question { get; set; } = null!;
+    public string Question { get; init; } = null!;
     
     /// <summary>
     /// Pun answer. If the type is <see cref="PunType.Statement"/> then this is null.
     /// </summary>
     public string? Answer { get; set; }
+
+    /// <summary>
+    /// Is the submission approved or rejected. If null, the submission has neither been approved nor rejected.
+    /// </summary>
+    public bool? Approved { get; set; } = null;
 }
