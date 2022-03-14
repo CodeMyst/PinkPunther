@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace PinkPunter.Backend.Models;
+namespace PinkPunther.Backend.Models;
 
 /// <summary>
 /// Holds a submission for adding a pun to the website. Can be approved or rejected.

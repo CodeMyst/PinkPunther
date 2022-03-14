@@ -2,19 +2,33 @@ using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace PinkPunter.Backend.Models;
+namespace PinkPunther.Backend.Models;
 
 /// <summary>
-/// Information used for submitting puns.
+/// Pun object, holds one pun.
 /// </summary>
-public class PunSubmissionCreateInfo
+public class Pun
 {
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string? Id { get; set; }
+    
     /// <summary>
     /// Type of pun. Can be Question/Answer or Statement.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
     [BsonRepresentation(BsonType.String)]
     public PunType Type { get; set; }
+    
+    /// <summary>
+    /// When the pun was was approved by admins and added to the list.
+    /// </summary>
+    public DateTime CreatedAt { get; set; }
+    
+    /// <summary>
+    /// List of all ratings the pun has gotten.
+    /// </summary>
+    public List<Rating>? Ratings { get; set; }
 
     /// <summary>
     /// Pun question.

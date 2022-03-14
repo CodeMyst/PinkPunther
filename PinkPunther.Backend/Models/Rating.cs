@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace PinkPunter.Backend.Models;
+namespace PinkPunther.Backend.Models;
 
 /// <summary>
 /// A single rating on a pun.

@@ -1,6 +1,6 @@
-namespace PinkPunter.Backend.Models;
+namespace PinkPunther.Backend.Models;
 
-public class PinkPunterDatabaseSettings
+public class PinkPuntherDatabaseSettings
 {
     public string ConnectionString { get; set; } = null!;
 

@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using PinkPunter.Backend.Models;
+using PinkPunther.Backend.Models;
 
-namespace PinkPunter.Backend.Services;
+namespace PinkPunther.Backend.Services;
 
 public class MongoDbService
 {
@@ -10,7 +10,7 @@ public class MongoDbService
 
     public IMongoCollection<PunSubmission> PunSubmissionsCollection { get; }
 
-    public MongoDbService(IOptions<PinkPunterDatabaseSettings> dbSettings)
+    public MongoDbService(IOptions<PinkPuntherDatabaseSettings> dbSettings)
     {
         var mongoClient = new MongoClient(dbSettings.Value.ConnectionString);
         var mongoDb = mongoClient.GetDatabase(dbSettings.Value.DatabaseName);

@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
-using PinkPunter.Backend.Models;
-using PinkPunter.Backend.Services;
+using PinkPunther.Backend.Models;
+using PinkPunther.Backend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.Configure<PinkPunterDatabaseSettings>(
-    builder.Configuration.GetSection("PinkPunterDatabase"));
+builder.Services.Configure<PinkPuntherDatabaseSettings>(
+    builder.Configuration.GetSection("PinkPuntherDatabase"));
 
 builder.Services.AddSingleton<MongoDbService>();
 builder.Services.AddSingleton<PunsService>();
