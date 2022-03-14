@@ -1,4 +1,4 @@
-namespace PinkPunter.Backend.Models;
+namespace PinkPunther.Backend.Models;
 
 /// <summary>
 /// Type of pun.

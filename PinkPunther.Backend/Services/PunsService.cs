@@ -1,7 +1,7 @@
 using MongoDB.Driver;
-using PinkPunter.Backend.Models;
+using PinkPunther.Backend.Models;
 
-namespace PinkPunter.Backend.Services;
+namespace PinkPunther.Backend.Services;
 
 public class PunsService
 {

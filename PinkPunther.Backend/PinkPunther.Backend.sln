@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkPunter.Backend", "PinkPunter.Backend.csproj", "{BAEE488D-C9B5-4217-964B-8246E148AB79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinkPunther.Backend", "PinkPunther.Backend.csproj", "{BAEE488D-C9B5-4217-964B-8246E148AB79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

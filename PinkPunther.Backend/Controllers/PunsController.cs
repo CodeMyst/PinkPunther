@@ -1,8 +1,9 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
-using PinkPunter.Backend.Models;
-using PinkPunter.Backend.Services;
+using PinkPunther.Backend.Models;
+using PinkPunther.Backend.Services;
 
-namespace PinkPunter.Backend.Controllers;
+namespace PinkPunther.Backend.Controllers;
 
 [ApiController]
 [Route("/api/v{version:apiVersion}/[controller]")]
@@ -33,4 +34,10 @@ public class PunsController : ControllerBase
 
         return submission;
     }
+
+    [HttpGet("Submissions")]
+    public async Task<PagingCollection<PunSubmission>> Submissions(
+        [Range(1, int.MaxValue)] int page = 1,
+        [Range(1, int.MaxValue)] int pageSize = 10) =>
+        await _punSubmissionsService.GetSubmissionsAsync(page, pageSize);
 }
